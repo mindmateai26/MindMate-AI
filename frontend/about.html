@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About MindMate AI – Architecture & Information</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">🌱</div>
+        <span>MindMate AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="assessment.html">Screening</a></li>
+        <li><a href="companion.html">AI Companion</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-danger-outline btn-sm open-crisis-btn">🆘 Crisis Helpline</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="container" style="max-width: 860px;">
+
+      <div class="screening-header">
+        <div class="hero-tag">ABOUT MINDMATE AI</div>
+        <h1 style="font-size: 2.2rem; margin-top: 8px;">Project Purpose & Technical Architecture</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          A student-friendly, full-stack mental wellness screening, preliminary ML risk prediction, and multilingual conversational companion.
+        </p>
+      </div>
+
+      <!-- Academic Disclaimer Banner -->
+      <div class="disclaimer-banner">
+        <span>⚠️</span>
+        <div>
+          <strong>Academic & Ethical Disclaimer:</strong> MindMate AI is developed strictly as an academic engineering demonstration. It is <strong>NOT</strong> a certified medical device, does not provide psychiatric diagnoses, and must not replace professional clinical consultation or crisis interventions.
+        </div>
+      </div>
+
+      <!-- What is MindMate AI -->
+      <div class="card" style="margin-top: 24px;">
+        <h3 style="margin-bottom: 12px;">1. Project Overview & Objective</h3>
+        <p style="color: #334155; margin-bottom: 12px;">
+          Many students and young adults experience academic strain, sleep disruptions, and social isolation without accessible, stigma-free initial screening. <strong>MindMate AI</strong> bridges this awareness gap by offering:
+        </p>
+        <ul style="padding-left: 20px; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
+          <li>A preliminary 9-indicator self-assessment evaluating daily mood, academic stress, sleep, and executive functioning.</li>
+          <li>An explainable Machine Learning prediction pipeline categorizing risk into Low, Mild, Moderate, or High tiers with factor transparency.</li>
+          <li>A culturally nuanced conversational companion fluent in English, Tamil, and colloquial Thanglish.</li>
+          <li>Emergency crisis intervention triggers that immediately direct vulnerable individuals to verified national mental health helplines.</li>
+        </ul>
+      </div>
+
+      <!-- Technologies Used -->
+      <div class="card" style="margin-top: 24px;">
+        <h3 style="margin-bottom: 14px;">2. Full-Stack Technology Stack</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+          <div style="padding: 14px; background: #f8fafc; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <strong style="color: var(--primary);">Backend Core</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">Python 3.11+, FastAPI REST API, Pydantic V2 validation, Uvicorn ASGI server.</p>
+          </div>
+          <div style="padding: 14px; background: #f8fafc; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <strong style="color: var(--primary);">Machine Learning</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">Scikit-Learn Random Forest Classifier, Pandas, NumPy, Joblib model serialization.</p>
+          </div>
+          <div style="padding: 14px; background: #f8fafc; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <strong style="color: var(--primary);">Generative AI</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">Official Google GenAI Python SDK (google-genai), Gemini 2.5 Flash, contextual session memory.</p>
+          </div>
+          <div style="padding: 14px; background: #f8fafc; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <strong style="color: var(--primary);">Frontend Architecture</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">Vanilla HTML5, modern CSS3 with custom variables, modular JavaScript, responsive card UI.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI/ML & Explainability -->
+      <div class="card" style="margin-top: 24px;">
+        <h3 style="margin-bottom: 12px;">3. AI/ML Pipeline & Explainability</h3>
+        <p style="color: #334155; margin-bottom: 12px;">
+          Rather than functioning as an unexplainable "black box", MindMate AI evaluates 9 explicit self-reported wellness dimensions:
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+          <code>mood_rating</code>, <code>stress_level</code>, <code>sleep_quality</code>, <code>concentration_difficulty</code>, <code>academic_work_pressure</code>, <code>social_withdrawal</code>, <code>energy_level</code>, <code>anxiety_frequency</code>, and <code>daily_functioning_impact</code>.
+        </p>
+        <p style="color: #334155; margin-top: 12px;">
+          The Random Forest model calculates the contribution weights of each dimension. If an individual scores high on <em>Academic Pressure</em> and <em>Sleep Disruption</em>, the system explicitly lists these as the top drivers of their score and provides targeted stress-regulation strategies.
+        </p>
+      </div>
+
+      <!-- Multilingual & Gemini Integration -->
+      <div class="card" style="margin-top: 24px;">
+        <h3 style="margin-bottom: 12px;">4. Multilingual & Gemini Conversational Companion</h3>
+        <p style="color: #334155; margin-bottom: 10px;">
+          The companion assistant incorporates:
+        </p>
+        <ul style="padding-left: 20px; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem;">
+          <li><strong>Conversational History Retention:</strong> Maintains multi-turn context throughout the active session (e.g., remembering names, stressors, and exam dates).</li>
+          <li><strong>Linguistic Empathy:</strong> Understands English, native Tamil (தமிழ்), and mixed Thanglish expressions (such as <em>"enaku romba stress ah iruku"</em> and <em>"manasu valikuthu"</em>).</li>
+          <li><strong>Emotion Tagging:</strong> Detects emotional valence (Sadness, Stress, Anxiety, Anger, Loneliness, Academic pressure, Neutral) and attaches supportive tags to responses.</li>
+          <li><strong>Resilient Architecture:</strong> Automatically routes to Gemini API when a valid API key is present in <code>backend/.env</code>, and provides an offline-capable conversational engine when disconnected.</li>
+        </ul>
+      </div>
+
+      <!-- Project Limitations -->
+      <div class="card" style="margin-top: 24px;">
+        <h3 style="margin-bottom: 12px;">5. System Limitations</h3>
+        <ul style="padding-left: 20px; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem;">
+          <li><strong>Non-Clinical Scope:</strong> Screening scores and risk tiers are preliminary and statistical, not medical diagnoses.</li>
+          <li><strong>Self-Report Bias:</strong> Results rely entirely on self-reported inputs which may fluctuate with daily mood.</li>
+          <li><strong>Emergency Protocol:</strong> If acute distress is detected, the AI companion ceases normal conversation and instructs the user to seek human contact and call 14416 or 112 immediately.</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Crisis Modal -->
+  <div id="crisis-modal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color: var(--danger);">🚨 Crisis Helpline Support</h3>
+        <button id="close-crisis-btn" class="modal-close">&times;</button>
+      </div>
+      <p style="font-size: 0.95rem;">Tele-MANAS: <strong>14416</strong> | KIRAN: <strong>1800-599-0019</strong> | Sneha: <strong>044-24640050</strong></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 MindMate AI – Preliminary Wellness Screening and ML Demonstration.</p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

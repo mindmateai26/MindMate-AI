@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard – MindMate AI</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">🌱</div>
+        <span>MindMate AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="assessment.html">Screening</a></li>
+        <li><a href="companion.html">AI Companion</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-danger-outline btn-sm open-crisis-btn">🆘 Crisis Helpline</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="container">
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 28px;">
+        <div>
+          <h1 style="font-size: 2rem;">Wellness Insights & History</h1>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Review your latest screening metrics, factor tendencies, and past assessments.</p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <a href="assessment.html" class="btn btn-primary">Start New Assessment</a>
+          <a href="companion.html" class="btn btn-secondary">Open AI Companion</a>
+        </div>
+      </div>
+
+      <!-- Disclaimer Banner -->
+      <div class="disclaimer-banner">
+        <span>ℹ️</span>
+        <div>
+          <strong>Preliminary Tracking:</strong> Trends shown below are derived from your self-reported inputs and are for personal awareness only.
+        </div>
+      </div>
+
+      <!-- Key Metrics Row -->
+      <div class="dashboard-metrics">
+        <div class="card metric-card">
+          <div class="metric-label">Latest Score</div>
+          <div class="metric-val" id="dash-score">-- / 100</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;" id="dash-date">No assessment taken</div>
+        </div>
+
+        <div class="card metric-card">
+          <div class="metric-label">Risk Category</div>
+          <div class="metric-val" id="dash-category">--</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">ML Predicted Tier</div>
+        </div>
+
+        <div class="card metric-card">
+          <div class="metric-label">Dominant Area</div>
+          <div class="metric-val" id="dash-factor" style="font-size: 1.3rem;">--</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Top contributing factor</div>
+        </div>
+
+        <div class="card metric-card">
+          <div class="metric-label">Total Screenings</div>
+          <div class="metric-val" id="dash-total">0</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Records tracked</div>
+        </div>
+      </div>
+
+      <!-- Contributing Factor Details -->
+      <div class="card" style="margin-bottom: 30px;">
+        <h3 style="margin-bottom: 6px;">Key Contributing Factors (Latest)</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">Factors that contributed most significantly to your recent score calculation:</p>
+        <div class="factors-list" id="dash-factors-list">
+          <p style="color: var(--text-muted);">Take a screening assessment to view contributing factor breakdowns.</p>
+        </div>
+      </div>
+
+      <!-- Assessment History Table -->
+      <div class="card">
+        <h3 style="margin-bottom: 6px;">Previous Assessment Summary</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">Historical record of screening sessions saved locally and securely:</p>
+        
+        <div class="history-table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Date &amp; Time</th>
+                <th>Distress Score</th>
+                <th>Risk Category</th>
+                <th>Primary Impact Factor</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body">
+              <tr>
+                <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">No assessment records recorded yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Crisis Modal -->
+  <div id="crisis-modal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color: var(--danger);">🚨 Crisis Helpline Support</h3>
+        <button id="close-crisis-btn" class="modal-close">&times;</button>
+      </div>
+      <p style="font-size: 0.95rem;">Tele-MANAS: <strong>14416</strong> | KIRAN: <strong>1800-599-0019</strong> | Sneha: <strong>044-24640050</strong></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 MindMate AI – Preliminary Wellness Screening and ML Demonstration.</p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

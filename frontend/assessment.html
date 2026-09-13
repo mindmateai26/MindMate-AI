@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wellness Screening – MindMate AI</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">🌱</div>
+        <span>MindMate AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="assessment.html" class="active">Screening</a></li>
+        <li><a href="companion.html">AI Companion</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-danger-outline btn-sm open-crisis-btn">🆘 Crisis Helpline</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="container" style="max-width: 720px;">
+
+      <div class="screening-header">
+        <div class="hero-tag">PRELIMINARY SCREENING</div>
+        <h1 style="font-size: 2rem; margin-top: 8px;">Mental Wellness Self-Assessment</h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">
+          Reflect on how you have felt over the last 2 weeks. All responses are confidential and used strictly for preliminary ML risk categorization.
+        </p>
+
+        <!-- Progress Indicator -->
+        <div class="progress-bar-wrapper">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted);">
+          <span id="step-counter">Question 1 of 9</span>
+          <span id="progress-percent">11% completed</span>
+        </div>
+      </div>
+
+      <!-- Questionnaire Form Card -->
+      <div class="card" id="form-card">
+        <form id="screening-form">
+
+          <!-- Q1: Mood -->
+          <div class="question-block active" data-index="1">
+            <h3 class="question-title">1. Overall Mood & Emotional Balance</h3>
+            <p class="question-subtitle">How would you describe your general mood over the past two weeks?</p>
+            <div class="options-group">
+              <label class="option-card">
+                <input type="radio" name="mood_rating" value="1" required>
+                <span>Generally cheerful, optimistic, and emotionally balanced</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="mood_rating" value="2">
+                <span>Fairly positive with occasional brief low moments</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="mood_rating" value="3">
+                <span>Frequently neutral or noticeably flat/unenthusiastic</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="mood_rating" value="4">
+                <span>Consistently low, sad, or emotionally drained</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="mood_rating" value="5">
+                <span>Severely depressed, tearful, or experiencing deep emptiness</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q2: Stress -->
+          <div class="question-block" data-index="2">
+            <h3 class="question-title">2. Stress & Tension Level</h3>
+            <p class="question-subtitle">How frequently do you feel tense, restless, or overburdened?</p>
+            <div class="options-group">
+              <label class="option-card">
+                <input type="radio" name="stress_level" value="1">
+                <span>Rarely or never stressed; feeling calm and in control</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="stress_level" value="2">
+                <span>Mild stress that is easily managed with brief rest</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="stress_level" value="3">
+                <span>Moderate tension affecting relaxation after work/study</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="stress_level" value="4">
+                <span>High stress most days; often feeling near breaking point</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="stress_level" value="5">
+                <span>Extreme, relentless stress causing physical strain/burnout</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q3: Sleep -->
+          <div class="question-block" data-index="3">
+            <h3 class="question-title">3. Sleep Quality & Restfulness</h3>
+            <p class="question-subtitle">How consistent and restorative has your sleep been recently?</p>
+            <div class="options-group">
+              <label class="option-card">
+                <input type="radio" name="sleep_quality" value="1">
+                <span>Excellent; fall asleep easily and wake up refreshed</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="sleep_quality" value="2">
+                <span>Generally good with minor occasional disruptions</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="sleep_quality" value="3">
+                <span>Restless sleep; difficulty falling asleep or waking up early</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="sleep_quality" value="4">
+                <span>Frequent insomnia or disturbed sleep (sleeping 3-4 hours)</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="sleep_quality" value="5">
+                <span>Severe chronic insomnia or inability to get restful sleep</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q4: Concentration -->
+          <div class="question-block" data-index="4">
+            <h3 class="question-title">4. Focus & Concentration</h3>
+            <p class="question-subtitle">Have you had trouble focusing on study, lectures, or reading?</p>
+            <div class="options-group">
+              <label class="option-card">
+                <input type="radio" name="concentration_difficulty" value="1">
+                <span>No difficulty; able to maintain strong focus and flow</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="concentration_difficulty" value="2">
+                <span>Minor distractibility easily corrected</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="concentration_difficulty" value="3">
+                <span>Frequently re-reading paragraphs or wandering mind</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="concentration_difficulty" value="4">
+                <span>Significant difficulty concentrating; tasks take twice as long</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="concentration_difficulty" value="5">
+                <span>Severe brain fog or inability to focus even on simple tasks</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q5: Academic/Work Pressure -->
+          <div class="question-block" data-index="5">
+            <h3 class="question-title">5. Academic & Workload Pressure</h3>
+            <p class="question-subtitle">How overwhelming do your syllabus, assignments, exams, or tasks feel?</p>
+            <div class="options-group">
+              <label class="option-card">
+                <input type="radio" name="academic_work_pressure" value="1">
+                <span>Completely manageable; comfortable with workload</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="academic_work_pressure" value="2">
+                <span>Slight pressure around deadlines, but keeping pace</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="academic_work_pressure" value="3">
+                <span>Notable pressure; regularly worried about grades/deadlines</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="academic_work_pressure" value="4">
+                <span>Heavy pressure causing constant anxiety and apprehension</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="academic_work_pressure" value="5">
+                <span>Completely overwhelmed; paralyzed by exam/academic demands</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q6: Social Withdrawal -->
+          <div class="question-block" data-index="6">
+            <h3 class="question-title">6. Social Connectedness</h3>
+            <p class="question-subtitle">Have you been avoiding friends, family, or group conversations?</p>
+            <div class="options-group">
+              <label class="option-card">
+                <input type="radio" name="social_withdrawal" value="1">
+                <span>Connected and actively enjoying time with friends/family</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="social_withdrawal" value="2">
+                <span>Slightly introverted lately, but responding to messages</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="social_withdrawal" value="3">
+                <span>Occasionally skipping social interactions due to low energy</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="social_withdrawal" value="4">
+                <span>Avoiding calls, muting chats, and isolating in room</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="social_withdrawal" value="5">
+                <span>Completely withdrawn; feeling disconnected from everyone</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q7: Energy Level -->
+          <div class="question-block" data-index="7">
+            <h3 class="question-title">7. Vitality & Energy Levels</h3>
+            <p class="question-subtitle">How would you describe your daily physical and mental energy?</p>
+            <div class="options-group">
+              <label class="option-card">
+                <input type="radio" name="energy_level" value="1">
+                <span>High vitality; feeling energetic throughout the day</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="energy_level" value="2">
+                <span>Normal energy with expected tiredness by evening</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="energy_level" value="3">
+                <span>Sluggish or dragging yourself through routine activities</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="energy_level" value="4">
+                <span>Chronic fatigue; even small tasks feel physically taxing</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="energy_level" value="5">
+                <span>Extreme exhaustion; struggling to get out of bed</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q8: Anxiety Frequency -->
+          <div class="question-block" data-index="8">
+            <h3 class="question-title">8. Anxiety & Nervous Apprehension</h3>
+            <p class="question-subtitle">How often do you experience racing heart, nervousness, or panic?</p>
+            <div class="options-group">
+              <label class="option-card">
+                <input type="radio" name="anxiety_frequency" value="1">
+                <span>Rarely or never; calm mental baseline</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="anxiety_frequency" value="2">
+                <span>Only when facing a specific high-stakes situation</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="anxiety_frequency" value="3">
+                <span>A few times a week without a clear reason</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="anxiety_frequency" value="4">
+                <span>Daily bouts of racing heart, dread, or knot in stomach</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="anxiety_frequency" value="5">
+                <span>Constant overwhelming panic attacks or debilitating anxiety</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q9: Daily Functioning Impact -->
+          <div class="question-block" data-index="9">
+            <h3 class="question-title">9. Impact on Daily Functioning</h3>
+            <p class="question-subtitle">How much are these feelings hindering your attendance, hygiene, or routine?</p>
+            <div class="options-group">
+              <label class="option-card">
+                <input type="radio" name="daily_functioning_impact" value="1">
+                <span>No negative impact; completing all daily duties smoothly</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="daily_functioning_impact" value="2">
+                <span>Minor procrastination, but keeping up with obligations</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="daily_functioning_impact" value="3">
+                <span>Moderate delay in tasks, occasionally skipping chores or classes</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="daily_functioning_impact" value="4">
+                <span>Difficulty maintaining basic personal care, meals, or attendance</span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="daily_functioning_impact" value="5">
+                <span>Severely impaired; unable to carry out basic daily functions</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="form-nav-buttons">
+            <button type="button" id="prev-btn" class="btn btn-outline" style="visibility: hidden;">
+              &larr; Previous
+            </button>
+            <button type="button" id="next-btn" class="btn btn-primary">
+              Next Question &rarr;
+            </button>
+            <button type="submit" id="submit-btn" class="btn btn-primary" style="display: none;">
+              Submit Assessment &rarr;
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Crisis Modal -->
+  <div id="crisis-modal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color: var(--danger); display: flex; align-items: center; gap: 8px;">
+          <span>🚨</span> Crisis & Helpline Support
+        </h3>
+        <button id="close-crisis-btn" class="modal-close">&times;</button>
+      </div>
+      <p style="margin-bottom: 16px; font-size: 0.95rem;">
+        If you are experiencing acute distress, reach out to verified 24/7 helplines:
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+        <div style="padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <strong>Tele-MANAS (Govt of India):</strong>
+          <div style="font-size: 1.1rem; color: var(--primary); font-weight: 700;">📞 14416 / 1800-891-4416</div>
+        </div>
+        <div style="padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <strong>KIRAN Helpline:</strong>
+          <div style="font-size: 1.1rem; color: var(--primary); font-weight: 700;">📞 1800-599-0019</div>
+        </div>
+        <div style="padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <strong>Sneha Helpline:</strong>
+          <div style="font-size: 1.1rem; color: var(--primary); font-weight: 700;">📞 +91 44 2464 0050</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 MindMate AI – Preliminary Wellness Screening and ML Demonstration.</p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/assessment.js"></script>
+</body>
+</html>

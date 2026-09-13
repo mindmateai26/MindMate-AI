@@ -1,0 +1,170 @@
+[
+  {
+    "id": "rec_20260913_140335",
+    "timestamp": "2026-09-13T14:03:35.201263",
+    "dateFormatted": "Sep 13, 2026, 02:03 PM",
+    "score": 69.4,
+    "rawScore": 34,
+    "riskCategory": "High",
+    "contributingFactors": [
+      {
+        "feature": "academic_work_pressure",
+        "label": "Academic & Work Pressure",
+        "rating": 5,
+        "severity_score": 5.75,
+        "status": "High Impact"
+      },
+      {
+        "feature": "mood_rating",
+        "label": "Mood & Emotional Balance",
+        "rating": 4,
+        "severity_score": 12.69,
+        "status": "High Impact"
+      },
+      {
+        "feature": "concentration_difficulty",
+        "label": "Focus & Concentration",
+        "rating": 4,
+        "severity_score": 9.49,
+        "status": "High Impact"
+      }
+    ],
+    "inputs": {
+      "mood_rating": 4,
+      "stress_level": 4,
+      "sleep_quality": 3,
+      "concentration_difficulty": 4,
+      "academic_work_pressure": 5,
+      "social_withdrawal": 3,
+      "energy_level": 4,
+      "anxiety_frequency": 4,
+      "daily_functioning_impact": 3
+    }
+  },
+  {
+    "id": "rec_20260913_133251",
+    "timestamp": "2026-09-13T13:32:51.219614",
+    "dateFormatted": "Sep 13, 2026, 01:32 PM",
+    "score": 66.7,
+    "rawScore": 33,
+    "riskCategory": "Moderate",
+    "contributingFactors": [
+      {
+        "feature": "energy_level",
+        "label": "Vitality & Energy Levels",
+        "rating": 5,
+        "severity_score": 11.61,
+        "status": "High Impact"
+      },
+      {
+        "feature": "stress_level",
+        "label": "Stress Level",
+        "rating": 5,
+        "severity_score": 10.14,
+        "status": "High Impact"
+      },
+      {
+        "feature": "anxiety_frequency",
+        "label": "Anxiety & Nervous Tension",
+        "rating": 5,
+        "severity_score": 7.26,
+        "status": "High Impact"
+      }
+    ],
+    "inputs": {
+      "mood_rating": 1,
+      "stress_level": 5,
+      "sleep_quality": 2,
+      "concentration_difficulty": 4,
+      "academic_work_pressure": 5,
+      "social_withdrawal": 3,
+      "energy_level": 5,
+      "anxiety_frequency": 5,
+      "daily_functioning_impact": 3
+    }
+  },
+  {
+    "id": "rec_20260912_170128",
+    "timestamp": "2026-09-12T17:01:28.079591",
+    "dateFormatted": "Sep 12, 2026, 05:01 PM",
+    "score": 69.4,
+    "rawScore": 34,
+    "riskCategory": "High",
+    "contributingFactors": [
+      {
+        "feature": "academic_work_pressure",
+        "label": "Academic & Work Pressure",
+        "rating": 5,
+        "severity_score": 5.75,
+        "status": "High Impact"
+      },
+      {
+        "feature": "mood_rating",
+        "label": "Mood & Emotional Balance",
+        "rating": 4,
+        "severity_score": 12.69,
+        "status": "High Impact"
+      },
+      {
+        "feature": "concentration_difficulty",
+        "label": "Focus & Concentration",
+        "rating": 4,
+        "severity_score": 9.49,
+        "status": "High Impact"
+      }
+    ],
+    "inputs": {
+      "mood_rating": 4,
+      "stress_level": 4,
+      "sleep_quality": 3,
+      "concentration_difficulty": 4,
+      "academic_work_pressure": 5,
+      "social_withdrawal": 3,
+      "energy_level": 4,
+      "anxiety_frequency": 4,
+      "daily_functioning_impact": 3
+    }
+  },
+  {
+    "id": "rec_20260904_150440",
+    "timestamp": "2026-09-04T15:04:40.949650",
+    "dateFormatted": "Sep 04, 2026, 03:04 PM",
+    "score": 69.4,
+    "rawScore": 34,
+    "riskCategory": "High",
+    "contributingFactors": [
+      {
+        "feature": "academic_work_pressure",
+        "label": "Academic & Work Pressure",
+        "rating": 5,
+        "severity_score": 5.75,
+        "status": "High Impact"
+      },
+      {
+        "feature": "mood_rating",
+        "label": "Mood & Emotional Balance",
+        "rating": 4,
+        "severity_score": 12.69,
+        "status": "High Impact"
+      },
+      {
+        "feature": "concentration_difficulty",
+        "label": "Focus & Concentration",
+        "rating": 4,
+        "severity_score": 9.49,
+        "status": "High Impact"
+      }
+    ],
+    "inputs": {
+      "mood_rating": 4,
+      "stress_level": 4,
+      "sleep_quality": 3,
+      "concentration_difficulty": 4,
+      "academic_work_pressure": 5,
+      "social_withdrawal": 3,
+      "energy_level": 4,
+      "anxiety_frequency": 4,
+      "daily_functioning_impact": 3
+    }
+  }
+]

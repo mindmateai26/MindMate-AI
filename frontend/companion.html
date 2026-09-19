@@ -20,11 +20,14 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="assessment.html">Screening</a></li>
         <li><a href="companion.html" class="active">AI Companion</a></li>
+        <li><a href="journal.html">AI Journal</a></li>
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
       <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">🌙</button>
         <button class="btn btn-danger-outline btn-sm open-crisis-btn">🆘 Crisis Helpline</button>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">☰</button>
       </div>
     </div>
   </nav>
@@ -115,10 +118,13 @@
           <input
             type="text"
             id="chat-input"
-            placeholder="Type your message in English, தமிழ், or Thanglish..."
+            placeholder="Type or click 🎤 to speak in English, தமிழ், or Thanglish..."
             autocomplete="off"
             required
           />
+          <button type="button" id="mic-btn" class="mic-btn" title="Voice Input (Click to Speak / Stop)">
+            🎤
+          </button>
           <button type="submit" id="send-btn" class="btn btn-primary" style="border-radius: 24px; padding: 10px 22px;">
             Send &#10148;
           </button>

@@ -221,4 +221,68 @@ document.addEventListener("DOMContentLoaded", () => {
       quickPromptsBar.appendChild(btn);
     });
   }
+
+  // Voice Input Speech-to-Text Setup
+  const micBtn = document.getElementById("mic-btn");
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (micBtn) {
+    if (SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      let isListening = false;
+
+      micBtn.addEventListener("click", () => {
+        if (!isListening) {
+          try {
+            // Adapt recognition language to selector if Tamil
+            if (langSelect && langSelect.value === "ta") {
+              recognition.lang = "ta-IN";
+            } else {
+              recognition.lang = "en-US";
+            }
+            recognition.start();
+            isListening = true;
+            micBtn.classList.add("listening");
+            micBtn.setAttribute("title", "Listening... Click to stop");
+          } catch (err) {
+            console.warn("Recognition start error:", err);
+            isListening = false;
+            micBtn.classList.remove("listening");
+          }
+        } else {
+          recognition.stop();
+          isListening = false;
+          micBtn.classList.remove("listening");
+        }
+      });
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        if (transcript) {
+          chatInput.value = (chatInput.value ? chatInput.value + " " : "") + transcript;
+          chatInput.focus();
+        }
+      };
+
+      recognition.onerror = (event) => {
+        console.warn("Voice recognition error:", event.error);
+        isListening = false;
+        micBtn.classList.remove("listening");
+      };
+
+      recognition.onend = () => {
+        isListening = false;
+        micBtn.classList.remove("listening");
+        micBtn.setAttribute("title", "Voice Input (Click to Speak / Stop)");
+      };
+
+    } else {
+      micBtn.addEventListener("click", () => {
+        alert("Speech Recognition is not supported on this browser. Try Google Chrome or Microsoft Edge.");
+      });
+    }
+  }
 });

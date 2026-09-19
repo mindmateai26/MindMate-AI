@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Journaling – MindMate AI</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">🌱</div>
+        <span>MindMate AI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="assessment.html">Screening</a></li>
+        <li><a href="companion.html">AI Companion</a></li>
+        <li><a href="journal.html" class="active">AI Journal</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">🌙</button>
+        <button class="btn btn-danger-outline btn-sm open-crisis-btn">🆘 Crisis Helpline</button>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <div class="container" style="max-width: 900px;">
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+        <div>
+          <span class="saas-badge" style="background: var(--primary-light); color: var(--primary-hover);">AI REFLECTION SUITE</span>
+          <h1 style="font-size: 2.1rem; margin-top: 6px;">AI Journal &amp; Mood Analysis</h1>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Write or speak your thoughts freely in English, Tamil, or Thanglish. MindMate analyzes your emotional tone and offers gentle, grounding reflections.
+          </p>
+        </div>
+        <div>
+          <a href="companion.html" class="btn btn-secondary">Talk to AI Companion</a>
+        </div>
+      </div>
+
+      <!-- Journal Entry Box Card -->
+      <div class="card" style="margin-bottom: 30px;">
+        <h3 style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+          <span>✍️</span> Today's Private Journal Entry
+        </h3>
+
+        <!-- Prompt suggestions -->
+        <div style="display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap;">
+          <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; align-self: center;">Prompts:</span>
+          <button type="button" class="prompt-pill journal-prompt" data-text="Today I felt overwhelmed because ">Exam stress</button>
+          <button type="button" class="prompt-pill journal-prompt" data-text="Something that brought a moment of peace today was ">Small Win</button>
+          <button type="button" class="prompt-pill journal-prompt" data-text="enaku romba tired ah iruku, thookam varala ">Thanglish Vent</button>
+          <button type="button" class="prompt-pill journal-prompt" data-text="One boundary I need to set for my peace of mind is ">Boundaries</button>
+        </div>
+
+        <form id="journal-form">
+          <div style="position: relative;">
+            <textarea
+              id="journal-input"
+              rows="5"
+              placeholder="What's sitting on your heart or mind today? Type here or click 🎤 to dictate..."
+              style="width: 100%; padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border); font-family: inherit; font-size: 0.95rem; line-height: 1.6; outline: none; background: var(--input-bg); color: var(--text-main); resize: vertical;"
+              required
+            ></textarea>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; flex-wrap: wrap; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <button type="button" id="journal-mic-btn" class="mic-btn" title="Voice Dictation (Click to Speak / Stop)">
+                  🎤
+                </button>
+                <span id="journal-mic-status" style="font-size: 0.82rem; color: var(--text-muted);">Voice input ready</span>
+              </div>
+
+              <div style="display: flex; gap: 10px;">
+                <button type="button" id="clear-journal-btn" class="btn btn-outline btn-sm">Clear</button>
+                <button type="submit" id="save-journal-btn" class="btn btn-primary btn-sm" style="padding: 8px 20px;">
+                  Analyze &amp; Save Entry &#10148;
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <!-- Dynamic Emotion Detection Result Preview for Current Entry -->
+        <div id="journal-analysis-preview" style="display: none; margin-top: 18px; padding: 16px; border-radius: var(--radius-md); background: rgba(13, 148, 136, 0.06); border: 1px solid var(--border);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <strong style="font-size: 0.92rem; color: var(--primary-hover);">🧠 Emotion &amp; Sentiment Analysis:</strong>
+            <span id="preview-emotion-badge" class="saas-badge" style="background: var(--primary-light); color: var(--primary);">Neutral</span>
+          </div>
+          <p id="preview-analysis-text" style="font-size: 0.88rem; color: var(--text-main); margin-bottom: 6px;"></p>
+          <div style="font-size: 0.8rem; color: var(--text-muted);" id="preview-analysis-lang"></div>
+        </div>
+      </div>
+
+      <!-- Past Journal Reflections List -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <h3 style="font-size: 1.15rem;">Past Journal Entries</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Confidential entries saved securely in your local browser session.</p>
+          </div>
+          <button id="clear-all-journals-btn" class="btn btn-outline btn-sm" style="font-size: 0.8rem;">Clear All Entries</button>
+        </div>
+
+        <div id="journal-entries-container">
+          <!-- Populated by journal.js -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Crisis Modal -->
+  <div id="crisis-modal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color: var(--danger);">🚨 Crisis Helpline Support</h3>
+        <button id="close-crisis-btn" class="modal-close">&times;</button>
+      </div>
+      <p style="font-size: 0.95rem;">Tele-MANAS: <strong>14416</strong> | KIRAN: <strong>1800-599-0019</strong> | Sneha: <strong>044-24640050</strong></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 MindMate AI – Preliminary Wellness Screening and ML Demonstration.</p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/journal.js"></script>
+</body>
+</html>

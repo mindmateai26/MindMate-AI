@@ -12,6 +12,7 @@
 <body>
 
   <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="brand">
@@ -22,11 +23,14 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="assessment.html">Screening</a></li>
         <li><a href="companion.html">AI Companion</a></li>
+        <li><a href="journal.html">AI Journal</a></li>
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
       <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Mode">🌙</button>
         <button class="btn btn-danger-outline btn-sm open-crisis-btn">🆘 Crisis Helpline</button>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">☰</button>
       </div>
     </div>
   </nav>
@@ -39,25 +43,230 @@
       <div class="disclaimer-banner">
         <span>ℹ️</span>
         <div>
-          <strong>Academic Project Disclaimer:</strong> MindMate AI is a preliminary mental-wellness screening and conversational companion built for educational purposes. It is <strong>NOT</strong> a clinical diagnostic tool or medical device.
+          <strong>Academic Project Disclaimer:</strong> MindMate AI is an educational preliminary mental-wellness screening & conversational companion. It is <strong>NOT</strong> a clinical diagnostic tool or medical device.
         </div>
       </div>
 
       <!-- Hero Section -->
       <section class="hero">
-        <div class="hero-tag">AI-POWERED MENTAL WELLNESS</div>
+        <div class="hero-tag">AI-POWERED MENTAL WELLNESS PLATFORM</div>
         <h1 class="hero-title">Your Compassionate Space for <span>Mental Wellness & Guidance</span></h1>
         <p class="hero-desc">
-          Take a confidential preliminary screening, receive explainable ML risk insights, and confide in an empathetic AI companion fluent in English, Tamil, and Thanglish.
+          Empowering students and professionals with confidential self-assessments, explainable ML risk predictions, and an empathetic AI companion available 24/7 in English, Tamil, and Thanglish.
         </p>
         <div class="hero-cta">
-          <a href="assessment.html" class="btn btn-primary btn-lg">Start Wellness Screening</a>
+          <a href="#demo-preview" class="btn btn-primary btn-lg">Explore Live Demo</a>
+          <a href="assessment.html" class="btn btn-outline btn-lg">Start Screening</a>
           <a href="companion.html" class="btn btn-secondary btn-lg">Talk to AI Companion</a>
+        </div>
+
+        <!-- SaaS Key Metrics / Social Proof -->
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <div class="hero-stat-val">94.4%</div>
+            <div class="hero-stat-desc">ML Model Accuracy</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-val">3 Languages</div>
+            <div class="hero-stat-desc">English, தமிழ், Thanglish</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-val">24 / 7</div>
+            <div class="hero-stat-desc">Confidential &amp; Private</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-val">Instant</div>
+            <div class="hero-stat-desc">Grounding &amp; Crisis Support</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Live Interactive Demo Section (Landing + Dashboard Showcase) -->
+      <section id="demo-preview" style="margin-top: 50px;">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <span class="saas-badge" style="background: var(--primary-light); color: var(--primary-hover);">INTERACTIVE PREVIEW</span>
+          <h2 style="font-size: 2.1rem; margin-top: 8px;">Experience the MindMate AI Suite</h2>
+          <p style="color: var(--text-muted); max-width: 620px; margin: 6px auto 0;">
+            Try our interactive mock modules below—test out conversational mood check-ins, risk classifications, trend visualizations, and personalized wellness suggestions.
+          </p>
+        </div>
+
+        <div class="preview-grid-container">
+          
+          <!-- Column 1: AI Chat Assistant Mockup -->
+          <div class="card" style="display: flex; flex-direction: column; padding: 0; overflow: hidden;">
+            <div class="chat-header" style="background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 14px 20px;">
+              <div class="chat-partner">
+                <div class="chat-avatar">🌱</div>
+                <div>
+                  <div style="font-weight: 700; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                    MindMate Chat Assistant
+                    <span class="mood-tag-badge" id="demo-mood-pill">Empathetic</span>
+                  </div>
+                  <div class="chat-status">
+                    <span class="status-dot"></span>
+                    <span>Online &amp; Active Listening</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span style="font-size: 0.78rem; color: var(--text-muted); background: var(--bg-main); padding: 4px 10px; border-radius: 9999px; border: 1px solid var(--border);">Live Mock Engine</span>
+              </div>
+            </div>
+
+            <!-- Chat Message List -->
+            <div class="chat-messages" id="demo-chat-messages" style="height: 340px; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 14px;">
+              <div class="message-row ai">
+                <div class="message-bubble">
+                  Hello there! 🌿 I am your MindMate companion. Whether you're feeling academic pressure, exhausted after classes, or simply need a safe place to share what's on your mind, I'm here. How are you feeling today?
+                  <div class="bubble-meta">
+                    <span>MindMate AI</span> &bull; <span>Just now</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Suggestions -->
+            <div class="quick-prompts-bar" id="demo-quick-bar" style="padding: 10px 16px;">
+              <button class="prompt-pill demo-prompt" data-msg="I'm feeling so anxious about exams.">📚 Exam Anxiety</button>
+              <button class="prompt-pill demo-prompt" data-msg="enaku romba stress ah iruku bro">💬 Thanglish Vent</button>
+              <button class="prompt-pill demo-prompt" data-msg="Can you guide me through a 2-minute breathing exercise?">🧘 Breathing Exercise</button>
+              <button class="prompt-pill demo-prompt" data-msg="I feel tired and unmotivated today.">🔋 Low Energy</button>
+            </div>
+
+            <!-- Chat Input -->
+            <form id="demo-chat-form" style="display: flex; gap: 10px; padding: 14px 18px; border-top: 1px solid var(--border); background: var(--bg-card);">
+              <input type="text" id="demo-chat-input" class="chat-input" placeholder="Type a message or click a prompt above..." style="flex: 1; padding: 10px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-size: 0.92rem; outline: none;" />
+              <button type="submit" class="btn btn-primary btn-sm" style="padding: 0 18px;">Send</button>
+            </form>
+          </div>
+
+          <!-- Column 2: Mental Health Prediction Card & Mood Overview -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <!-- Mental Health Prediction Card -->
+            <div class="card">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <div>
+                  <span class="saas-badge" style="background: #e0f2fe; color: #0284c7;">ML PREDICTION CARD</span>
+                  <h3 style="font-size: 1.25rem; margin-top: 6px;">Mental Health Risk Tier</h3>
+                </div>
+                <span class="risk-badge risk-mild" id="demo-risk-badge" style="font-size: 0.85rem; padding: 4px 12px;">Mild Risk</span>
+              </div>
+              
+              <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px;">
+                <span style="font-size: 2.2rem; font-weight: 800; color: var(--text-main);" id="demo-score-text">38</span>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">/ 100 Overall Distress Score</span>
+              </div>
+
+              <p style="color: var(--text-muted); font-size: 0.86rem; margin-bottom: 14px;" id="demo-risk-summary">
+                Based on current wellness indicators, distress levels are within manageable bounds. Gentle self-care and workload balancing are recommended.
+              </p>
+
+              <!-- Simple Bar Charts for Top Distress Factors -->
+              <div class="chart-container">
+                <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-main); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;">
+                  Factor Intensity Breakdown (Self-Reported)
+                </div>
+                <div class="bar-chart-row">
+                  <span class="bar-chart-label">Academic</span>
+                  <div class="bar-track"><div class="bar-progress" style="width: 70%;"></div></div>
+                  <span class="bar-val" style="color: var(--warning);">3.8 / 5</span>
+                </div>
+                <div class="bar-chart-row">
+                  <span class="bar-chart-label">Sleep Debt</span>
+                  <div class="bar-track"><div class="bar-progress" style="width: 55%;"></div></div>
+                  <span class="bar-val" style="color: var(--primary);">2.9 / 5</span>
+                </div>
+                <div class="bar-chart-row">
+                  <span class="bar-chart-label">Anxiety</span>
+                  <div class="bar-track"><div class="bar-progress" style="width: 42%;"></div></div>
+                  <span class="bar-val" style="color: var(--secondary);">2.2 / 5</span>
+                </div>
+                <div class="bar-chart-row">
+                  <span class="bar-chart-label">Energy</span>
+                  <div class="bar-track"><div class="bar-progress" style="width: 80%; background: linear-gradient(90deg, #10b981, #06b6d4);"></div></div>
+                  <span class="bar-val" style="color: var(--success);">4.0 / 5</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mood Overview Section -->
+            <div class="card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="font-size: 1.15rem;">Interactive Mood Overview</h3>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">How are you today?</span>
+              </div>
+              
+              <div class="mood-grid">
+                <button class="mood-btn" data-mood="Great" data-score="18" data-tier="Low" data-feedback="Energized and focused! Keep up your steady routine.">
+                  <span class="emoji">✨</span>
+                  <span class="mood-title">Great</span>
+                </button>
+                <button class="mood-btn active" data-mood="Calm" data-score="38" data-tier="Mild" data-feedback="Stable and reflective. Balanced pace for the day.">
+                  <span class="emoji">😌</span>
+                  <span class="mood-title">Calm</span>
+                </button>
+                <button class="mood-btn" data-mood="Stressed" data-score="62" data-tier="Moderate" data-feedback="Tension detected. Remember to take 10-min micro-breaks.">
+                  <span class="emoji">😰</span>
+                  <span class="mood-title">Stressed</span>
+                </button>
+                <button class="mood-btn" data-mood="Anxious" data-score="76" data-tier="Moderate" data-feedback="Overwhelmed? Try the 4-4-4 box breathing exercise below.">
+                  <span class="emoji">🌪️</span>
+                  <span class="mood-title">Anxious</span>
+                </button>
+                <button class="mood-btn" data-mood="Exhausted" data-score="88" data-tier="High" data-feedback="High fatigue. Prioritize deep rest and avoid late screen time.">
+                  <span class="emoji">💤</span>
+                  <span class="mood-title">Tired</span>
+                </button>
+              </div>
+
+              <div id="mood-feedback-note" style="padding: 10px 14px; background: var(--bg-main); border-radius: var(--radius-sm); border-left: 3px solid var(--primary); font-size: 0.85rem; color: var(--text-main);">
+                <strong>Status:</strong> Stable and reflective. Balanced pace for the day.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Wellness Recommendations Section -->
+        <div class="card" style="margin-top: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+            <div>
+              <span class="saas-badge" style="background: #dcfce7; color: #16a34a;">TAILORED CARE</span>
+              <h3 style="font-size: 1.25rem; margin-top: 4px;">Smart Wellness Recommendations</h3>
+            </div>
+            <a href="assessment.html" class="btn btn-outline btn-sm">Full Clinical Screening &rarr;</a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
+            <div class="recom-item">
+              <div class="recom-icon">🧘‍♂️</div>
+              <div>
+                <strong style="font-size: 0.92rem;">4-4-4 Grounding Routine</strong>
+                <p style="font-size: 0.83rem; color: var(--text-muted); margin-top: 2px;">Inhale 4s, hold 4s, exhale 4s. Activates parasympathetic nervous system to decrease cortisol.</p>
+              </div>
+            </div>
+            <div class="recom-item">
+              <div class="recom-icon">⏳</div>
+              <div>
+                <strong style="font-size: 0.92rem;">Pomodoro Work Boundaries</strong>
+                <p style="font-size: 0.83rem; color: var(--text-muted); margin-top: 2px;">Chunk study or work sessions into 25-minute sprints separated by mandatory 5-minute screen detachment.</p>
+              </div>
+            </div>
+            <div class="recom-item">
+              <div class="recom-icon">🌙</div>
+              <div>
+                <strong style="font-size: 0.92rem;">Circadian Wind-Down</strong>
+                <p style="font-size: 0.83rem; color: var(--text-muted); margin-top: 2px;">Limit blue light 45 minutes prior to sleep; aim for a consistent 7–8 hour rest window.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- Features Section -->
-      <section style="margin-top: 50px;">
+      <section style="margin-top: 60px;">
         <h2 style="text-align: center; margin-bottom: 8px;">Key Capabilities</h2>
         <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 30px;">
           Built with explainable Machine Learning, official Gemini generative intelligence, and culturally-attuned linguistic empathy.
@@ -185,5 +394,6 @@
   </footer>
 
   <script src="/js/app.js"></script>
+  <script src="/js/landing_demo.js"></script>
 </body>
 </html>

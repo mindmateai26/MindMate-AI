@@ -71,6 +71,43 @@ const Storage = {
   }
 };
 
+// Theme Management (Light and Dark mode)
+function initTheme() {
+  const savedTheme = localStorage.getItem("mindmate_theme") || "light";
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  updateThemeButtons(savedTheme);
+
+  document.querySelectorAll(".theme-toggle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "light";
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("mindmate_theme", next);
+      updateThemeButtons(next);
+    });
+  });
+}
+
+function updateThemeButtons(theme) {
+  document.querySelectorAll(".theme-toggle-btn").forEach(btn => {
+    btn.innerHTML = theme === "dark" ? "☀️" : "🌙";
+    btn.setAttribute("title", theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode");
+  });
+}
+
+// Mobile Nav Menu Drawer Toggle
+function setupMobileNav() {
+  const toggleBtn = document.querySelector(".mobile-nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
+  setupMobileNav();
   setupCrisisModal();
 });

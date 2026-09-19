@@ -1,5 +1,47 @@
 [
   {
+    "id": "rec_20260917_221103",
+    "timestamp": "2026-09-17T22:11:03.769440",
+    "dateFormatted": "Sep 17, 2026, 10:11 PM",
+    "score": 69.4,
+    "rawScore": 34,
+    "riskCategory": "High",
+    "contributingFactors": [
+      {
+        "feature": "academic_work_pressure",
+        "label": "Academic & Work Pressure",
+        "rating": 5,
+        "severity_score": 5.75,
+        "status": "High Impact"
+      },
+      {
+        "feature": "mood_rating",
+        "label": "Mood & Emotional Balance",
+        "rating": 4,
+        "severity_score": 12.69,
+        "status": "High Impact"
+      },
+      {
+        "feature": "concentration_difficulty",
+        "label": "Focus & Concentration",
+        "rating": 4,
+        "severity_score": 9.49,
+        "status": "High Impact"
+      }
+    ],
+    "inputs": {
+      "mood_rating": 4,
+      "stress_level": 4,
+      "sleep_quality": 3,
+      "concentration_difficulty": 4,
+      "academic_work_pressure": 5,
+      "social_withdrawal": 3,
+      "energy_level": 4,
+      "anxiety_frequency": 4,
+      "daily_functioning_impact": 3
+    }
+  },
+  {
     "id": "rec_20260913_140335",
     "timestamp": "2026-09-13T14:03:35.201263",
     "dateFormatted": "Sep 13, 2026, 02:03 PM",

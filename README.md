@@ -2,6 +2,9 @@
 
 A full-stack, student-friendly mental health application engineered from scratch. **MindMate AI** offers preliminary self-report screening, Machine Learning risk category predictions, an empathetic multilingual conversational companion (powered by Google Gemini and a local fallback engine), emotion/stress detection, assessment history tracking, and crisis intervention safeguards.
 
+[![Live Demo](https://img.shields.io/badge/Live_Website-Available_24%2F7-brightgreen?style=for-the-badge&logo=render)](https://mindmate-ai-li9m.onrender.com)
+🔗 **Permanent Live Website:** [https://mindmate-ai-li9m.onrender.com](https://mindmate-ai-li9m.onrender.com)
+
 > **Academic Project Disclaimer:**  
 > MindMate AI is strictly an educational/preliminary wellness screening tool and **NOT a certified medical diagnostic device**. It does not substitute for clinical mental healthcare or psychiatric diagnosis.
 
